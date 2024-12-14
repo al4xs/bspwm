@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Charles
+GenericName=Web Debugging Proxy
+Exec=env _JAVA_OPTIONS="-Xmx6144M -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dsun.java2d.uiScale=100%" /usr/bin/charles4
+Icon=charles-proxy
+Categories=Network;Development;WebDevelopment;Java
+StartupNotify=true
+Terminal=false
+StartupWMClass=com-xk72-charles-gui-MainWithClassLoader
+MimeType=application/x-charles-savedsession;application/x-charles-savedsession+xml;application/x-charles-savedsession+json;application/har+json;application/vnd.tcpdump.pcap;application/x-charles-trace

@@ -1,0 +1,90 @@
+id: OpenRedir
+
+info:
+  name: Open Redirect Fuzzer
+  author: d4
+  severity: medium
+  description: |
+    An open redirect vulnerability was detected. An attacker can redirect a user
+    to a malicious site and possibly obtain sensitive information, modify data, 
+    and/or execute unauthorized operations.
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
+    cwe-id: CWE-601
+  metadata:
+    max-request: 3
+  tags: redirect, generic
+
+# Template para verificar open redirect em vários parâmetros de URL.
+http:
+  - method: GET
+    path:  
+      - "{{BaseURL}}/%5c{{Hostname}}.example.com/"
+      - "{{BaseURL}}/%5c://{{Hostname}}.example.com/"
+      - "{{BaseURL}}//://{{Hostname}}.example.com/"
+      - "{{BaseURL}}/%5c:/%5c{{Hostname}}.example.com/"
+      - "{{BaseURL}}/?://X//{{Hostname}}.example.com/"
+      - "{{BaseURL}}/?://X/%5c{{Hostname}}.example.com/"
+      - "{{BaseURL}}/%5cexample.com?.{{Hostname}}/"      
+      - "{{BaseURL}}//https://{{Hostname}}.example.com/"      
+      - "{{BaseURL}}/r/{{Hostname}}.example.com/"        
+      - "{{BaseURL}}/https://{{Hostname}}.example.com/"            
+      - "{{BaseURL}}/en/%5c{{Hostname}}.example.com/"                        
+      - "{{BaseURL}}/en//{{Hostname}}.example.com/"                    
+      - "{{BaseURL}}/fr/%5c{{Hostname}}.example.com/"                    
+      - "{{BaseURL}}/fr//{{Hostname}}.example.com/"                    
+      - "{{BaseURL}}/de/%5c{{Hostname}}.example.com/"                        
+      - "{{BaseURL}}/de//{{Hostname}}.example.com/"                    
+      - "{{BaseURL}}/nl/%5c{{Hostname}}.example.com/"                    
+      - "{{BaseURL}}/nl//{{Hostname}}.example.com/"                 
+      - "{{BaseURL}}//%5c{{Hostname}}.example.com/"                  
+      - "{{BaseURL}}/%5c{{Hostname}}｡example｡com/"      
+      - "{{BaseURL}}////{{Hostname}}.example.com/"      
+      - "{{BaseURL}}/%5c/%5c/%5c/{{Hostname}}.example.com/"      
+      - "{{BaseURL}}/%5c/%5c/%5c{{Hostname}}.example.com/"            
+      - "{{BaseURL}}///%5c{{Hostname}}.example.com/"             
+      - "{{BaseURL}}////%5c{{Hostname}}.example.com/"            
+      - "{{BaseURL}}/////{{Hostname}}.example.com/"      
+      - "{{BaseURL}}//////{{Hostname}}.example.com/"      
+      - "{{BaseURL}}///////{{Hostname}}.example.com/"        
+      - "{{BaseURL}}/servlets/ProcessAction?identifier=https://{{Hostname}}.example.com"
+      - "{{BaseURL}}//example.com/"         
+      - "{{BaseURL}}/javascript/example.com/"               
+      - "{{BaseURL}}/</example.com/"         
+      - "{{BaseURL}}/:/example.com/"               
+      - "{{BaseURL}}//@example.com/"          
+      - "{{BaseURL}}///example.com/"            
+      - "{{BaseURL}}//.example.com/"            
+      - "{{BaseURL}}//%5cexample.com/"        
+      - "{{BaseURL}}/%5cexample.com/"           
+      - "{{BaseURL}}/redirect/https://example.com"         
+      - "{{BaseURL}}/redirect//example.com"         
+      - "{{BaseURL}}/redirect/aHR0cHM6Ly9leGFtcGxlLmNvbQ=="
+      - "{{BaseURL}}//aHR0cHM6Ly9leGFtcGxlLmNvbQ=="      
+      - "{{BaseURL}}/%5caHR0cHM6Ly9leGFtcGxlLmNvbQ=="
+      - "{{BaseURL}}/nextPage/aHR0cHM6Ly9leGFtcGxlLmNvbQ=="      
+      - "{{BaseURL}}/logout/example.com"      
+      - "{{BaseURL}}/logout/https://example.com"            
+      - "{{BaseURL}}?://{{Hostname}}.example.com/"    
+      - "{{BaseURL}}/%5C%5C{{Hostname}}.example.com/%252e%252e%252f"
+      - "{{BaseURL}}/%5C%5C{{Hostname}}.example.com/%252e"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: header
+        regex:
+          - '(?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)(?:[a-zA-Z0-9\-_\.@]*)example\.com\/?(\/|[^.].*)?$'
+          - '(?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)(?:[a-zA-Z0-9\-_\.@]*)example｡com\/?(\/|[^.].*)?$'          
+      
+      - type: status
+        status:
+          - 301
+          - 302
+          - 307
+          - 308
+          - 303
+          - 306
+        condition: or

@@ -1,0 +1,50 @@
+telegram:
+  - id: "telegram"
+    telegram_api_key: "6488197459:AAHkesH_GZgFlK0OuqFelytIe9egWcEpDy8"
+    telegram_chat_id: "5421210755"
+    telegram_format: "{{data}}"
+    telegram_parsemode: "Markdown"
+
+slack:
+  - id: "sub"
+    slack_channel: "Bug Bounty"
+    slack_username: "ASMbot"
+    slack_format: "{{data}}"
+    slack_webhook_url: "https://hooks.slack.com/services/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"
+
+  - id: "xss"
+    slack_channel: "Bug Bounty"
+    slack_username: "ASMbot"
+    slack_format: "{{data}}"
+    slack_webhook_url: "https://hooks.slack.com/services/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"
+
+  - id: "dir"
+    slack_channel: "Bug Bounty"
+    slack_username: "ASMbot"
+    slack_format: "{{data}}"
+    slack_webhook_url: "https://hooks.slack.com/services/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"
+
+  - id: "asmprog"
+    slack_channel: "Bug Bounty"
+    slack_username: "ASMbot"
+    slack_format: "{{data}}"
+    slack_webhook_url: "https://hooks.slack.com/services/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"
+
+  - id: "cves"
+    slack_channel: "Bug Bounty"
+    slack_username: "ASMbot"
+    slack_format: "{{data}}"
+    slack_webhook_url: "https://hooks.slack.com/services/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"
+
+  - id: "vuln"
+    slack_channel: "Bug Bounty"
+    slack_username: "ASMbot"
+    slack_format: "{{data}}"
+    slack_webhook_url: "https://hooks.slack.com/services/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"
+
+  - id: "unknow3"
+    slack_channel: "Bug Bounty"
+    slack_username: "ASMbot"
+    slack_format: "{{data}}"
+    slack_webhook_url: ""
+

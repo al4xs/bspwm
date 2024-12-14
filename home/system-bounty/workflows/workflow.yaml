@@ -1,0 +1,15 @@
+nuclei_scan:
+  concurrency: 25
+  rate_limit: 150
+  timeout: 5
+  retries: 1
+  custom_templates: [ ]
+  severity: [ ]
+  cve_ids: [ ]
+  tags: [ ]
+
+workflows:
+# Abaixo todas automações de vuln
+  - name: teste
+    command: |
+      /usr/bin/zsh -c 'source ~/.zshrc ; ls'
