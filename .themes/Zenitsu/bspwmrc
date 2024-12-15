@@ -12,6 +12,9 @@
 
 # xprop | grep WM_CLASS
 
+wmname LG3D &
+vmware-user-suid-wrapper &
+
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
