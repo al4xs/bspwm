@@ -7,7 +7,7 @@
 # ██████╔╝███████║██║     ╚███╔███╔╝██║ ╚═╝ ██║
 # ╚═════╝ ╚══════╝╚═╝      ╚══╝╚══╝ ╚═╝     ╚═╝
 # BSPWMRC | Hacker environment                                             
-# Michael Alves ( Al4xs )
+# Enríquez González (Aka. AlvinPix)
 # Color theme: Xavier
 
 # xprop | grep WM_CLASS
@@ -73,7 +73,7 @@ setxkbmap us
 /usr/bin/numlockx
 
 #WAL que da cor ao terminal e letras
-#wal -R
+wal -R
 
 #time
 timedatectl set-timezone America/Sao_Paulo

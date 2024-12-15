@@ -1,6 +1,11 @@
 # ~/.zshrc file for zsh interactive shells.
 # see /usr/share/doc/zsh/examples/zshrc for examples
 
+# wal
+(cat ~/.cache/wal/sequences &)
+source ~/.cache/wal/colors-tty.sh
+
+
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
@@ -26,8 +31,8 @@ PROMPT_EOL_MARK=""
 bindkey -e                                        # emacs key bindings
 bindkey '^U' backward-kill-line                   # ctrl + U
 bindkey '^[[3~' delete-char                       # delete
-bindkey '^[[1;3C' forward-word                    # alt + ->
-bindkey '^[[1;3D' backward-word                   # alt + <-
+bindkey '^[[1;5C' forward-word                    # alt + ->
+bindkey '^[[1;5D' backward-word                   # alt + <-
 bindkey '^[[H' beginning-of-line                  # home
 bindkey '^[[F' end-of-line                        # end
 
@@ -222,10 +227,13 @@ precmd() {
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     export LS_COLORS="$LS_COLORS:ow=30;44:" # fix ls color for folders with 777 permissions
-
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
+#set color on terminal
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+    alias ls='ls --color=auto'
+    alias ll='ls -l --color=auto'
+    alias lah='ls -lah --color=auto'
+    alias la='ls -la --color=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -369,3 +377,5 @@ alias hackingclub="cd && sudo openvpn vpn.ovpn"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

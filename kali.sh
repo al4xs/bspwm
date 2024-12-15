@@ -51,7 +51,7 @@ echo ""
 echo -e "${White} [${Blue}i${White}] Step 9 installing missing dependencies"
 sleep 2
 echo ""
-sudo apt install rofi fonts-firacode fonts-cantarell lxappearance nitrogen lsd betterlockscreen git net-tools xclip xdotool -y
+sudo apt install rofi fonts-firacode fonts-cantarell lxappearance nitrogen lsd betterlockscreen git net-tools xclip xdotool open-vm-tools open-vm-tools-desktop -y
 echo ""
 sudo apt install scrub bat tty-clock openvpn feh pulseaudio-utils git lolcat -y
 echo "Install my favorite tools"
@@ -315,6 +315,25 @@ if [ $quest = Y ]; then
                 echo ""
                 echo -e "${White} [${Red}-${White}] Wallpapers is not installed, installing Wallpapers"
                 cp -r ${RUTE}/home/Wallpapers ~/
+                echo ""
+                sleep 2
+        fi
+        if witch lightdm >/dev/null; then
+                echo ""
+                echo -e "${White} [${Blue}+${White}] Lightdm is installed, installing screenlogin configs"
+                sleep 2
+                sudo cp -rv ~/Wallpapers/perfil.jpeg /usr/share/backgrounds/kali
+                sudo cp -rv ~/Wallpapers/screenlogin.png /usr/share/backgrounds/kali
+                sudo cp -r ${RUTE}/home/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
+                echo ""
+                sleep 2
+        else
+                echo ""
+                echo -e "${White} [${Red}-${White}] Lightdm is not installed, installing screenlogin configs"
+                sleep 2
+                sudo cp -rv ~/Wallpapers/perfil.jpeg /usr/share/backgrounds/kali
+                sudo cp -rv ~/Wallpapers/screenlogin.png /usr/share/backgrounds/kali
+                sudo cp -r ${RUTE}/home/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
                 echo ""
                 sleep 2
         fi
