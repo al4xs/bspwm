@@ -55,7 +55,7 @@ sudo apt install rofi fonts-firacode fonts-cantarell lxappearance nitrogen lsd b
 echo ""
 sudo apt install scrub bat tty-clock openvpn feh pulseaudio-utils git lolcat -y
 echo "Install my favorite tools"
-sudo apt install cmatrix flameshot hollywood bpytop apktool seclists villain rlwrap python3-venv aircrack-ng strace binwalk irssi remmina imagemagick mplayer jq cmatrix weechat hexchat ltrace numlockx sublist3r htop neofetch kali-community-wallpapers feroxbuster naabu massdns obsidian golang pipx autorecon golang -y
+sudo apt install cmatrix flameshot hollywood bpytop apktool seclists villain rlwrap python3-venv aircrack-ng strace binwalk irssi remmina imagemagick mplayer jq cmatrix weechat hexchat ltrace numlockx sublist3r htop neofetch kali-community-wallpapers feroxbuster naabu massdns obsidian golang pipx autorecon golang finalrecon -y
 echo "Install with pip3"
 pip3 install pywal metafinder uro bhedak --break-system-packages
 echo "Install tool bug bounty"
