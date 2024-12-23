@@ -55,10 +55,10 @@ shodanquery () {
 	echo "shodan search ssl:domain.com --fields ip_str,port,hostnames,org --separator " " | awk '{print $1":"$2" "$3" "$4}' | anew"
 	echo "shodan host 192.168.1.1"
 	echo "shodan domain hackerone.com"
-	echo "shodan alert create “HackerOne” 104.16.100.52"
+	echo "shodan alert create 'HackerOne' 104.16.100.52"
 	echo "shodan alert triggers"
 	echo "shodan alert list"
-	echo "shodan alert create “Hyatt Hotels” 140.95.0.0/16"
+	echo "shodan alert create 'Hyatt Hotels' 140.95.0.0/16"
 	echo "shodan alert domain hackerone.com"
 	echo "shodan alert enable <alert ID> new_service,open_database,vulnerable,ssl_expired,internet_scanner,uncommon"
 	echo "shodan search access-control-allow-origin"
@@ -75,7 +75,7 @@ shodanquery () {
 	echo "shodan search asn:AS1230"
 	echo "shodan search os:windows 7"
 	echo "shodan search hostname:tesla.com port:8080"
-
+	echo "geo:'-23.545006, -46.830707' 'camera'"
 
 }
 
