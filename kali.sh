@@ -55,7 +55,7 @@ sudo apt install rofi fonts-firacode fonts-cantarell lxappearance nitrogen lsd b
 echo ""
 sudo apt install scrub bat tty-clock openvpn feh pulseaudio-utils git lolcat -y
 echo "Install my favorite tools"
-sudo apt install cmatrix flameshot hollywood bpytop apktool seclists villain rlwrap python3-venv aircrack-ng strace binwalk irssi remmina imagemagick mplayer jq cmatrix weechat hexchat ltrace numlockx sublist3r htop neofetch kali-community-wallpapers feroxbuster naabu massdns obsidian golang pipx autorecon golang finalrecon -y
+sudo apt install cmatrix flameshot hollywood bpytop apktool seclists villain rlwrap python3-venv aircrack-ng strace binwalk irssi remmina imagemagick mplayer jq cmatrix weechat hexchat ltrace numlockx sublist3r htop neofetch kali-community-wallpapers feroxbuster naabu massdns obsidian golang pipx autorecon golang finalrecon ffuf findomain trufflehog -y
 echo "Install with pip3"
 pip3 install pywal metafinder uro bhedak --break-system-packages
 echo "Install tool bug bounty"
@@ -423,6 +423,85 @@ if [ $quest = Y ]; then
 
                 echo -e "${White} [${Blue}i${White}] installing folder with MEG go/bin/ too bin bug bounty"
                 go install github.com/tomnomnom/meg@latest 2>/dev/null
+                go install github.com/ferreiraklet/Airi@latest 2>/dev/null
+                go install github.com/ferreiraklet/airixss@latest 2>/dev/null
+                go install github.com/projectdiscovery/alterx/cmd/alterx@latest 2>/dev/null
+                go install github.com/tomnomnom/anew@latest 2>/dev/null
+                go install github.com/ndelphit/apkurlgrep 2>/dev/null
+                go install github.com/projectdiscovery/asnmap/cmd/asnmap@latest 2>/dev/null
+                go install github.com/tomnomnom/assetfinder 2>/dev/null
+                go install github.com/sw33tLie/bbscope 2>/dev/null
+                go install github.com/edoardottt/cariddi/cmd/cariddi@latest 2>/dev/null
+                go install github.com/xm1k3/cent@latest 2>/dev/null
+                go install github.com/dwisiswant0/cf-check@latest 2>/dev/null
+                go install github.com/projectdiscovery/chaos-client/cmd/chaos@latest 2>/dev/null
+                go install github.com/jpillora/chisel@latest 2>/dev/null
+                go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest 2>/dev/null
+                go install github.com/edoardottt/csprecon/cmd/csprecon@latest 2>/dev/null
+                go install github.com/projectdiscovery/cvemap/cmd/cvemap@latest 2>/dev/null
+                go install github.com/al4xs/deconstructurl@latest 2>/dev/null
+                go install github.com/m4dm0e/dirdar@latest 2>/dev/null
+                go install github.com/projectdiscovery/dnsx/cmd/dnsx@latest 2>/dev/null
+                go install github.com/trickest/dsieve@latest 2>/dev/null
+                go install github.com/tomnomnom/fff@latest 2>/dev/null
+                go install github.com/takshal/freq@latest 2>/dev/null
+                go install github.com/dwisiswant0/galer@latest 2>/dev/null
+                go install github.com/lc/gau/v2/cmd/gau@latest 2>/dev/null
+                go install github.com/bp0lr/gauplus@latest 2>/dev/null
+                go install github.com/003random/getJS/v2@latest 2>/dev/null
+                go install github.com/tomnomnom/gf@latest 2>/dev/null
+                go install github.com/damit5/gitdorks_go@latest 2>/dev/null
+                go install github.com/gwen001/github-endpoints@latest 2>/dev/null
+                go install github.com/gwen001/github-subdomains@latest 2>/dev/null
+                go install github.com/dwisiswant0/go-dork@latest 2>/dev/null
+                go install github.com/deletescape/goop@latest 2>/dev/null
+                go install github.com/jaeles-project/gospider@latest 2>/dev/null
+                go install github.com/Josue87/gotator@latest 2>/dev/null
+                go install github.com/sensepost/gowitness@latest 2>/dev/null
+                go install github.com/tomnomnom/gron@latest 2>/dev/null
+                go install github.com/KathanP19/Gxss@latest 2>/dev/null
+                go install github.com/hakluke/hakcheckurl@latest 2>/dev/null
+                go install github.com/hakluke/hakip2host@latest 2>/dev/null
+                go install github.com/hakluke/hakrawler@latest 2>/dev/null
+                go install github.com/hakluke/hakrevdns@latest 2>/dev/null
+                go install github.com/hakluke/haktrails@latest 2>/dev/null
+                go install github.com/tomnomnom/hacks/html-tool@latest 2>/dev/null
+                go install github.com/tomnomnom/httprobe@latest 2>/dev/null
+                go install github.com/projectdiscovery/httpx/cmd/httpx@latest 2>/dev/null
+                go install github.com/projectdiscovery/interactsh/cmd/interactsh-client@latest 2>/dev/null
+                go install github.com/ThreatUnkown/jsubfinder@latest 2>/dev/null
+                go install github.com/projectdiscovery/katana/cmd/katana@latest 2>/dev/null
+                go install github.com/ropnop/kerbrute@latest 2>/dev/null
+                go install github.com/assetnote/kiterunner@latest 2>/dev/null
+                go install github.com/projectdiscovery/mapcidr/cmd/mapcidr@latest 2>/dev/null
+                go install github.com/daehee/mildew/cmd/mildew@latest 2>/dev/null
+                go install github.com/projectdiscovery/naabu/v2/cmd/naabu@latest 2>/dev/null
+                go install github.com/projectdiscovery/notify/cmd/notify@latest 2>/dev/null
+                go install github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest 2>/dev/null
+                go install github.com/detectify/page-fetch@latest 2>/dev/null
+                go install github.com/d3mondev/puredns/v2@latest 2>/dev/null
+                go install github.com/rix4uni/pvreplace@latest 2>/dev/null
+                go install github.com/tomnomnom/qsreplace@latest 2>/dev/null
+                go install github.com/root4loot/rescope/cmd/rescope@latest 2>/dev/null
+                go install github.com/Josue87/resolveDomains@latest 2>/dev/null
+                go install github.com/shenwei356/rush@latest 2>/dev/null
+                go install github.com/ferreiraklet/scopein@latest 2>/dev/null
+                go install github.com/j3ssie/sdlookup@latest 2>/dev/null
+                go install github.com/bitquark/shortscan/cmd/shortscan@latest 2>/dev/null
+                go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest 2>/dev/null
+                go install github.com/channyein1337/sonarbyte@latest 2>/dev/null
+                go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest 2>/dev/null
+                go install github.com/lc/subjs@latest 2>/dev/null
+                go install github.com/PentestPad/subzy@latest 2>/dev/null
+                go install github.com/tomnomnom/hacks/tojson@latest 2>/dev/null
+                go install github.com/projectdiscovery/uncover/cmd/uncover@latest 2>/dev/null
+                go install github.com/dwisiswant0/unew@latest 2>/dev/null
+                go install github.com/tomnomnom/unfurl@latest 2>/dev/null
+                go install github.com/ameenmaali/urldedupe@latest 2>/dev/null
+                go install github.com/projectdiscovery/urlfinder/cmd/urlfinder@latest 2>/dev/null
+                go install github.com/tomnomnom/waybackurls@latest 2>/dev/null
+                go install github.com/rix4uni/xsschecker@latest 2>/dev/null
+                go install github.com/xnl-h4ck3r/webpaste@latest 2>/dev/null
 
                 echo -e "${White} [${Blue}i${White}] Instaling .SSH configs and permissions"
                 cd && rm -rf .ssh 2>/dev/null
